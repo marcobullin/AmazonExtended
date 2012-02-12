@@ -79,7 +79,7 @@
         starsHtml   = (stars.length > 0) ? stars.html() : '';
 
       // this country has not a review for this product
-      if (!reviews || !reviewsHtml) {
+      if (!reviews || !reviewsHtml || !stars || !starsHtml) {
         _hideFaildCountryTab(this.id.substr(0, 2));
 
         // clean up
