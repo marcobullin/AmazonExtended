@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <p>Select countries:</p>
+    
+    <input type="checkbox" value="de" />Germany<br/>
+    <input type="checkbox" value="uk" />United Kingdom<br/>
+    <input type="checkbox" value="us" />United States<br/>
+    <input type="checkbox" value="fr" />France<br/>
+    <input type="checkbox" value="it" />Italy<br/>
+    <input type="checkbox" value="es" />Spain<br/>
+    <input type="checkbox" value="cn" />China<br/>
+    <input type="checkbox" value="jp" />Japan<br/>
+
+    <input type="button" id="save" value="save"/>
+
+    <script>
+      window.onload = function () {
+        "use strict";
+
+        $('#save').bind('click', function () {
+          var helper = {};
+          $('input[type="checkbox"]').each(function(index, element) {
+            if (element.checked === true) {
+              helper[element.value] = true;
+            } else {
+              helper[element.value] = false;
+            }
+          });
+
+          localStorage.countryCode = JSON.stringify(helper);
+        });
+
+        if (localStorage.hasOwnProperty('countryCode')) {
+          var index,
+            countryCode,
+            chkbox,
+            data = JSON.parse(localStorage.countryCode);
+
+          for (countryCode in data) {
+            if (data.hasOwnProperty(countryCode)) {
+              chkbox = $('input[value="' + countryCode + '"]');
+
+              if (chkbox.length > 0 && data[countryCode] === true) {
+                chkbox[0].checked = true;
+              }
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

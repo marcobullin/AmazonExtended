@@ -1,0 +1,33 @@
+{
+  "name": "Amazon reviews and ratings from other countries",
+  "version": "1.0",
+  "description": "coming soon",
+  "background_page": "background.html",
+  "options_page": "options.html",
+  "content_scripts": [{
+      "all_frames": true,
+      "js": [ 
+        "jquery.js",
+        "script.js" 
+      ],
+      "css": [
+        "style.css"
+      ],
+      "matches": [
+        "*://*.amazon.com/*", 
+        "*://*.amazon.de/*", 
+        "*://*.amazon.co.uk/*", 
+        "*://*.amazon.fr/*", 
+        "*://*.amazon.co.jp/*",
+        "*://*.amazon.it/*", 
+        "*://*.amazon.cn/*",
+        "*://*.amazon.es/*"
+      ],
+      "run_at": "document_end"
+   }],
+  "permissions": [
+    "tabs", 
+    "http://*/*", 
+    "https://*/*" 
+  ]
+}

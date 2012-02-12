@@ -1,0 +1,27 @@
+#tabmenue {
+  padding: 3px;
+  border-bottom: 1px solid #000;
+  margin: 0;
+}
+.shadow {
+	widht: 100%;
+	height: 40px;
+	background:linear-gradient(bottom, #fff, #EAF3FD);
+  	background:-webkit-linear-gradient(bottom, #fff, #EAF3FD);
+}
+#tabmenue li {
+  display: inline; 
+}
+#tabmenue li a {
+  padding: 3px 1em;
+  margin-left: 3px;
+  border: 1px solid #000;
+  border-bottom: 0;
+  text-decoration: none; 
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#tabmenue li a.current {
+  padding-bottom: 4px; 
+  background-color: #EAF3FD;
+}

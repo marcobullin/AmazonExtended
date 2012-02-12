@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript">
+			chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+	            if (request.action == 'getCountryCode') {
+	            	sendResponse({countryCode: JSON.parse(localStorage.countryCode)});
+	            }
+	        });
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
