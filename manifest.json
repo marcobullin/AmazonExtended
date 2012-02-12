@@ -1,7 +1,15 @@
 {
-  "name": "Amazon reviews and ratings from other countries",
+  "name": "Amazon Extended (reviews and ratings)",
   "version": "1.0",
-  "description": "coming soon",
+  "description": "Augmentation of the amazon website with reviews and ratings from countries of your choice.",
+  "icons": {
+     "16": "icon16.png",
+     "48": "icon48.png",
+     "128": "icon128.png"
+  },  
+  "browser_action": {
+    "default_icon": "icon48.png"
+  },
   "background_page": "background.html",
   "options_page": "options.html",
   "content_scripts": [{

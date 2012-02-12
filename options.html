@@ -2,20 +2,53 @@
 <html>
   <head>
     <script src="jquery.js"></script>
+    <style>
+      fieldset {
+        background:linear-gradient(bottom, #fff, #EAF3FD);
+        background:-webkit-linear-gradient(bottom, #fff, #EAF3FD);
+      }
+
+      input[type=button] {
+        margin-top: 10px;
+      }
+
+      input[type=checkbox] {
+        margin: 5px;
+      }
+
+      .success {
+        background-color: rgba(0, 255, 0, 0.2);
+        border: 1px solid #000;
+        padding: 5px;
+      }
+
+      .hide {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <p>Select countries:</p>
-    
-    <input type="checkbox" value="de" />Germany<br/>
-    <input type="checkbox" value="uk" />United Kingdom<br/>
-    <input type="checkbox" value="us" />United States<br/>
-    <input type="checkbox" value="fr" />France<br/>
-    <input type="checkbox" value="it" />Italy<br/>
-    <input type="checkbox" value="es" />Spain<br/>
-    <input type="checkbox" value="cn" />China<br/>
-    <input type="checkbox" value="jp" />Japan<br/>
+    <fieldset>
+      <legend>Country list</legend>
+      <div class="success hide">
+        Your settings were successfully saved.
+      </div>
+      <p>
+        Choose the countries from which you like to see additional reviews and ratings.
+        (including your own country)
+      </p>
+      <input type="checkbox" value="de" />Germany<br/>
+      <input type="checkbox" value="uk" />United Kingdom<br/>
+      <input type="checkbox" value="com" />United States<br/>
+      <input type="checkbox" value="fr" />France<br/>
+      <input type="checkbox" value="it" />Italy<br/>
+      <input type="checkbox" value="es" />Spain<br/>
+      <input type="checkbox" value="cn" />China<br/>
+      <input type="checkbox" value="jp" />Japan<br/>
 
-    <input type="button" id="save" value="save"/>
+      <input type="button" id="save" value="save"/>
+    </fieldset>
+    
 
     <script>
       window.onload = function () {
@@ -32,6 +65,12 @@
           });
 
           localStorage.countryCode = JSON.stringify(helper);
+
+          $('.success').removeClass('hide');
+
+          window.setTimeout(function () {
+            $('.success').addClass('hide');
+          }, 3000);
         });
 
         if (localStorage.hasOwnProperty('countryCode')) {

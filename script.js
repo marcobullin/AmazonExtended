@@ -28,42 +28,42 @@
       data = {
         uk : {
           name: 'United Kingdom',
-          url: 'http://www.amazon.co.uk/' + key + '/' + asin
+          url: 'http://www.amazon.co.uk/dp/' + asin
         },
 
-        us : {
+        com : {
           name: 'United States',
-          url: 'http://www.amazon.com/' + key + '/' + asin
+          url: 'http://www.amazon.com/dp/' + asin
         },
 
         fr : {
           name: 'France',
-          url: 'http://www.amazon.fr/' + key + '/' + asin
+          url: 'http://www.amazon.fr/dp/' + asin
         },
 
         es : {
           name: 'Spain',
-          url: 'http://www.amazon.es/' + key + '/' + asin
+          url: 'http://www.amazon.es/dp/' + asin
         },
 
         jp : {
           name: 'Japan',
-          url: 'http://www.amazon.co.jp/' + key + '/' + asin
+          url: 'http://www.amazon.co.jp/dp/' + asin
         },
 
         cn : {
           name: 'China',
-          url: 'http://www.amazon.cn/' + key + '/' + asin
+          url: 'http://www.amazon.cn/dp/' + asin
         },
 
         it : {
           name: 'Italy',
-          url: 'http://www.amazon.it/' + key + '/' + asin
+          url: 'http://www.amazon.it/dp/' + asin
         },
 
         de : {
           name: 'Germany',
-          url: 'http://www.amazon.de/' + key + '/' + asin
+          url: 'http://www.amazon.de/dp/' + asin
         }
       },
       id;
