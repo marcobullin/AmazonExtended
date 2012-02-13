@@ -1,6 +1,6 @@
 {
   "name": "Amazon Extended (reviews and ratings)",
-  "version": "1.0",
+  "version": "1.0.5",
   "description": "Augmentation of the amazon website with reviews and ratings from countries of your choice.",
   "icons": {
      "16": "icon16.png",
