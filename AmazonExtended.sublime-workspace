@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"curr",
+				"currentStars"
+			],
+			[
+				"render",
+				"renderReviewsAndRatings"
+			],
+			[
+				"addTabM",
+				"addTabMenuItem"
+			],
+			[
+				"curre",
+				"currentReviews"
+			],
+			[
 				"cur",
 				"currentUrl"
 			],
@@ -28,39 +44,10 @@
 	"buffers":
 	[
 		{
-			"file": "/Users/marcofrancke/Library/Application Support/Sublime Text 2/Packages/WordHighlight/Word Highlight.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 284,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "content.js",
-			"settings":
-			{
-				"buffer_size": 2728,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/marcofrancke/Library/Application Support/Sublime Text 2/Packages/sublime-jslint/sublime-jslint.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 448,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "script.js",
-			"settings":
-			{
-				"buffer_size": 3962,
-				"line_ending": "Unix"
-			}
-		},
-		{
+			"contents": "<!DOCTYPE html>\n<html>\n  <head>\n    <script src=\"jquery.js\"></script>\n    <style>\n      fieldset {\n        background:linear-gradient(bottom, #fff, #EAF3FD);\n        background:-webkit-linear-gradient(bottom, #fff, #EAF3FD);\n      }\n\n      input[type=button] {\n        margin-top: 10px;\n      }\n\n      input[type=checkbox] {\n        margin: 5px;\n      }\n\n      .success {\n        background-color: rgba(0, 255, 0, 0.2);\n        border: 1px solid #000;\n        padding: 5px;\n      }\n\n      .hide {\n        display: none;\n      }\n    </style>\n  </head>\n  <body>\n    <fieldset>\n      <legend>Country list</legend>\n      <div class=\"success hide\">\n        Your settings were successfully saved.\n      </div>\n      <p>\n        Choose the countries from which you like to see additional reviews and ratings.\n        (including your own country)\n      </p>\n      <input type=\"checkbox\" value=\"de\" />Germany<br/>\n      <input type=\"checkbox\" value=\"uk\" />United Kingdom<br/>\n      <input type=\"checkbox\" value=\"com\" />United States<br/>\n      <input type=\"checkbox\" value=\"fr\" />France<br/>\n      <input type=\"checkbox\" value=\"it\" />Italy<br/>\n      <input type=\"checkbox\" value=\"es\" />Spain<br/>\n      <input type=\"checkbox\" value=\"cn\" />China<br/>\n      <input type=\"checkbox\" value=\"jp\" />Japan<br/>\n\n      <input type=\"button\" id=\"save\" value=\"save\"/>\n    </fieldset>\n    \n\n    <script>\n      window.onload = function () {\n        \"use strict\";\n\n        $('#save').bind('click', function () {\n          var helper = {};\n          $('input[type=\"checkbox\"]').each(function(index, element) {\n            if (element.checked === true) {\n              helper[element.value] = true;\n            } else {\n              helper[element.value] = false;\n            }\n          });\n\n          localStorage.countryCode = JSON.stringify(helper);\n\n          $('.success').removeClass('hide');\n\n          window.setTimeout(function () {\n            $('.success').addClass('hide');\n          }, 3000);\n        });\n\n        if (localStorage.hasOwnProperty('countryCode')) {\n          var index,\n            countryCode,\n            chkbox,\n            data = JSON.parse(localStorage.countryCode);\n\n          for (countryCode in data) {\n            if (data.hasOwnProperty(countryCode)) {\n              chkbox = $('input[value=\"' + countryCode + '\"]');\n\n              if (chkbox.length > 0 && data[countryCode] === true) {\n                chkbox[0].checked = true;\n              }\n            }\n          }\n        }\n      };\n    </script>\n  </body>\n</html>",
 			"file": "options.html",
+			"file_size": 2536,
+			"file_write_time": 1329076368000000,
 			"settings":
 			{
 				"buffer_size": 2536,
@@ -68,26 +55,10 @@
 			}
 		},
 		{
-			"file": "style.css",
+			"file": "/Users/marcofrancke/Library/Application Support/Sublime Text 2/Packages/SublimeCodeIntel/Default (OSX).sublime-mousemap",
 			"settings":
 			{
-				"buffer_size": 556,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "manifest.json",
-			"settings":
-			{
-				"buffer_size": 960,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "background.html",
-			"settings":
-			{
-				"buffer_size": 556,
+				"buffer_size": 120,
 				"line_ending": "Unix"
 			}
 		}
@@ -99,7 +70,15 @@
 		"selected_items":
 		[
 			[
-				"git push",
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"push",
 				"Git: Push"
 			],
 			[
@@ -108,15 +87,27 @@
 			],
 			[
 				"git add",
-				"Git: Add..."
+				"Git: Add Current File"
 			],
 			[
 				"js",
 				"JSLint: Run JSLint"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
+				"git push",
+				"Git: Push"
+			],
+			[
+				"comm",
+				"Git: Commit"
+			],
+			[
+				"add",
+				"Git: Add Current File"
+			],
+			[
+				"com",
+				"Git: Commit"
 			],
 			[
 				"jsl",
@@ -156,7 +147,17 @@
 	},
 	"file_history":
 	[
+		"/Users/marcofrancke/Library/Application Support/Sublime Text 2/Packages/SublimeCodeIntel/Default (OSX).sublime-keymap",
+		"/Users/marcofrancke/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/marcofrancke/Projects/AmazonExtended/script.js",
+		"/Users/marcofrancke/Library/Application Support/Sublime Text 2/Packages/WordHighlight/Word Highlight.sublime-settings",
+		"/Users/marcofrancke/Library/Application Support/Sublime Text 2/Packages/sublime-jslint/sublime-jslint.sublime-settings",
+		"/Users/marcofrancke/Projects/AmazonExtended/contentScript.js",
+		"/Users/marcofrancke/Projects/AmazonExtended/options.html",
+		"/Users/marcofrancke/Projects/AmazonExtended/style.css",
+		"/Users/marcofrancke/Projects/AmazonExtended/manifest.json",
+		"/Users/marcofrancke/Projects/AmazonExtended/background.html",
+		"/Users/marcofrancke/Projects/AmazonExtended/content.js",
 		"/Users/marcofrancke/Desktop/Chrome Extension/style.css",
 		"/Users/marcofrancke/Desktop/Chrome Extension/script.js",
 		"/Users/marcofrancke/Desktop/Chrome Extension/background.html",
@@ -184,6 +185,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"      fieldset ",
+			"renderReviewsAndRatings",
+			"appendReviewsAndRatings",
 			"dir",
 			"each",
 			"currentReviews",
@@ -211,15 +215,43 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/marcofrancke/Library/Application Support/Sublime Text 2/Packages/WordHighlight/Word Highlight.sublime-settings",
+					"file": "options.html",
 					"settings":
 					{
-						"buffer_size": 284,
+						"buffer_size": 2536,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								636,
+								550
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/marcofrancke/Library/Application Support/Sublime Text 2/Packages/SublimeCodeIntel/Default (OSX).sublime-mousemap",
+					"settings":
+					{
+						"buffer_size": 120,
 						"regions":
 						{
 						},
@@ -233,201 +265,6 @@
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "content.js",
-					"settings":
-					{
-						"buffer_size": 2728,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								251,
-								251
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 39.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/marcofrancke/Library/Application Support/Sublime Text 2/Packages/sublime-jslint/sublime-jslint.sublime-settings",
-					"settings":
-					{
-						"buffer_size": 448,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								175,
-								175
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "script.js",
-					"settings":
-					{
-						"buffer_size": 3962,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2045,
-								2045
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1396.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "options.html",
-					"settings":
-					{
-						"buffer_size": 2536,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2495,
-								2495
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 764.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "style.css",
-					"settings":
-					{
-						"buffer_size": 556,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								87,
-								87
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "manifest.json",
-					"settings":
-					{
-						"buffer_size": 960,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								72,
-								72
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "background.html",
-					"settings":
-					{
-						"buffer_size": 556,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								496,
-								496
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -469,14 +306,6 @@
 		]
 	},
 	"menu_visible": true,
-	"output.git":
-	{
-		"height": 100.0
-	},
-	"output.jslint_result_view":
-	{
-		"height": 100.0
-	},
 	"replace":
 	{
 		"height": 0.0
@@ -487,6 +316,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"scr",
+				"script.js"
+			]
 		],
 		"width": 0.0
 	},

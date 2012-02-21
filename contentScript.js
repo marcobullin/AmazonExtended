@@ -93,9 +93,6 @@
             return;
         }
 
-        // read user settings
-        chrome.extension.sendRequest({action: "getCountryCode"}, $.proxy(this.init, this));
-
         /**
          * Adding the structure of the tab menu to amazon page.
          *
@@ -175,7 +172,7 @@
 
             // this country has not a star preview
             if (!starsHtml.trim()) {
-                return;
+                return false;
             }
 
             currentStars.after('<p><span class="crAvgStars">' + starsHtml + '</span> (' + data[id].name + ')</p>');
@@ -217,16 +214,26 @@
 
                     // IF FOREIGN AMAZON-PAGE IS LOADED THAN GET THE "REVIEWS"
                     (function (id) {
-                        $.get(data[id].url, function (content, status) {
+                        $.get(data[id].url + '/' + key + '/' + asin, function (content, status) {
                             if (status === 'error') {
                                 return;
                             }
-                        
+
+                            if (false === renderStarsOverview(currentStars, content, id)) {
+                                return;
+                            }
+
                             renderReviewsAndRatings(currentReviews, content, id);
+                            
                         });
                     }(id));
                 }
             }
         };
+
+        // read user settings
+        chrome.extension.sendRequest({action: "getCountryCode"}, $.proxy(this.init, this));
     };
+
+    var amazonExtended = new AmazonExtended();
 }());
