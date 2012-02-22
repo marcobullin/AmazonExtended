@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<script type="text/javascript">
-			chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
-	            if (request.action == 'getCountryCode') {
-	            	sendResponse({countryCode: JSON.parse(localStorage.countryCode)});
-	            }
-	        });
+    <head>
+        <script type="text/javascript">
+            chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+                if (request.action === 'getCountryCode') {
+                    sendResponse({countryCode: JSON.parse(localStorage.countryCode)});
+                }
+            });
 
-	        if (!localStorage.hasOwnProperty('countryCode')) {
-        		localStorage.countryCode = '{"de":true,"uk":true,"com":true,"fr":true,"it":true,"es":true,"cn":true,"jp":true}';
-	        }
-		</script>
-	</head>
-	<body>
-	</body>
+            if (!localStorage.hasOwnProperty('countryCode')) {
+                localStorage.countryCode = '{"de":true,"uk":true,"com":true,"fr":true,"it":true,"es":true,"cn":true,"jp":true}';
+            }
+        </script>
+    </head>
+    <body>
+    </body>
 </html>
