@@ -175,7 +175,7 @@
                 return false;
             }
 
-            currentStars.after('<p><span class="crAvgStars">' + starsHtml + '</span> (' + data[id].name + ')</p>');
+            currentStars.append('<p><span class="crAvgStars">' + starsHtml + '</span> (' + data[id].name + ')</p>');
         };
 
         /**
@@ -187,8 +187,8 @@
             var keyTokens      = currentUrl.split('/' + key + '/'),
                 rest           = keyTokens[1],
                 asin           = rest.split('/')[0],
-                currentReviews = $('#customerReviews'),
-                currentStars   = $('.tiny .crAvgStars'),
+                currentReviews = $('#customerReviews, [name="customerReviews"]'),
+                currentStars   = $('.tiny'),
                 id;
 
             // no reviews or ratings -> exit

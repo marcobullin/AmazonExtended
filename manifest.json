@@ -1,6 +1,7 @@
 {
   "name": "Amazon Extended (reviews and ratings)",
-  "version": "1.0.9",
+  "version": "1.2.0",
+  "manifest_version": 2,
   "description": "Extension for the Amazon website with reviews and ratings from countries of your choice.",
   "icons": {
      "16": "icon16.png",
@@ -33,7 +34,14 @@
       ],
       "run_at": "document_end"
    }],
-  "permissions": [ 
-    "http://*.amazon.*/*" 
+  "permissions": [
+      "*://*.amazon.com/*",
+      "*://*.amazon.de/*",
+      "*://*.amazon.co.uk/*",
+      "*://*.amazon.fr/*",
+      "*://*.amazon.co.jp/*",
+      "*://*.amazon.it/*",
+      "*://*.amazon.cn/*",
+      "*://*.amazon.es/*"
   ]
 }
