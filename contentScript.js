@@ -232,7 +232,7 @@
         };
 
         // read user settings
-        chrome.extension.sendRequest({action: "getCountryCode"}, $.proxy(this.init, this));
+        chrome.extension.sendMessage({action: "getCountryCode"}, $.proxy(this.init, this));
     };
 
     var amazonExtended = new AmazonExtended();

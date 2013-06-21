@@ -11,7 +11,9 @@
   "browser_action": {
     "default_icon": "icon48.png"
   },
-  "background_page": "background.html",
+  "background" : {
+    "scripts" : ["background.js"]
+  },
   "options_page": "options.html",
   "content_scripts": [{
       "all_frames": true,
